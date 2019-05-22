@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import OilCard from '../components/OilCard';
-import OilForm from './OilForm';
+// import OilForm from './OilForm';
 import { getOils } from '../actions/oils'
 
-import './Oils.css';
+import '../css/Oils.css';
 
 //no state but class is used for lifecycle method of componentdidmount
 class Oils extends Component {
@@ -17,7 +17,7 @@ class Oils extends Component {
       <div className="OilsContainer">
         <h1>Oils</h1>
         {this.props.oils.map(oil => <OilCard key={oil.id} oil={oil} />)}
-        <OilForm />
+        {/* <OilForm /> */}
       </div>
     )
   }

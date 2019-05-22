@@ -21,7 +21,7 @@ class OilForm extends Component {
   render() {
     const { name, uses, description, img_url } = this.props.oilFormData;
     return (
-      <div>
+      <div id="OilForm" className="OilCard OilForm">
         Add Oil
         <form onSubmit={this.handleOnSubmit}>
           <div>
