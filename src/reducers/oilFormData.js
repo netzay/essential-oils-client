@@ -11,7 +11,7 @@ export default (state = initialState, action) => {
     case 'UPDATED_DATA':
       return action.oilFormData
     case 'RESET_OIL_FORM':
-      return state;
+      return initialState;
     default:
       return state;
 

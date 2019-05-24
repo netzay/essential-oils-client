@@ -10,9 +10,23 @@ const setOils = oils => {
   }
 }
 
-const addOil = oil => {
+export const setOil = oil => {
+  return {
+    type: 'GET_OIL_SUCESS',
+    oil,
+  }
+}
+
+export const addOil = oil => {
   return {
     type: 'CREATE_OIL_SUCCESS',
+    oil
+  }
+}
+
+export const destroyOil = oil => {
+  return {
+    type: 'DELETE_OIL',
     oil
   }
 }
@@ -30,8 +44,18 @@ export const getOils = () => {
   }
 }
 
-export const createOil = oil => {
+export const getOil = (oil_id) => {
+  return dispatch => {
+    return fetch(`${API_URL}/oils/${oil_id}`)
+      .then(response => response.json())
+      .then(oil => {
+        return dispatch(setOil(oil))
+      })
+      .catch(error => console.log(error))
+  }
+}
 
+export const createOil = oil => {
   return dispatch => {
     return fetch(`${API_URL}/oils`, {
       method: "POST",
@@ -44,7 +68,27 @@ export const createOil = oil => {
       .then(oil => {
         dispatch(addOil(oil))
         dispatch(resetOilForm())
+        dispatch(getOils())
       })
       .catch(error => console.log(error))
   }
+}
+
+export const deleteOil = id => {
+  return dispatch => {
+    return fetch(`${API_URL}/oils/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify({ oil: id })
+    })
+      .then(response => response.json())
+      .then(oil => {
+        dispatch(destroyOil(oil))
+        dispatch(getOils())
+
+      })
+      .catch(error => console.log(error))
+  };
 }

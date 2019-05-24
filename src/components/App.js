@@ -4,6 +4,9 @@ import Oils from '../containers/Oils';
 import OilForm from '../containers/OilForm'
 import About from '../components/About'
 import NavBar from '../components/NavBar'
+import Header from './Header';
+
+
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 
@@ -12,15 +15,16 @@ const App = () => {
   return (
     <Router>
       <div className="App">
+        <NavBar />
         <div className="App-header">
-          <NavBar />
           <br />
-          <Route exact path="/" component={Oils} />
+          <Header />
+          {/* <Route exact path="/" component={Home} /> */}
+          <Route exact path="/oils" component={Oils} />
           <Route exact path="/about" component={About} />
-          <Route exact path="/add" component={OilForm} />
+          <Route exact path="/addnew" component={OilForm} />
 
         </div>
-
       </div>
     </Router>
   )

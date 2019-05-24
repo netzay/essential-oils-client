@@ -17,14 +17,18 @@
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
+
+
 #OilForm {
+    align-items: center;
+
     margin: auto;
     width: 50%;
     padding: 10px;
     /* float:none; */
 }
 
-.OilImage {
+/* .OilImage {
   width: 90px;
   height: 90px;
-}
+} */
