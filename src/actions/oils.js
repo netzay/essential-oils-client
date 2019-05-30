@@ -31,7 +31,6 @@ export const destroyOil = oil => {
   }
 }
 
-
 //async actions - calling to backend
 
 export const getOils = () => {
@@ -40,7 +39,6 @@ export const getOils = () => {
       .then(response => response.json())
       .then(oils => dispatch(setOils(oils)))
       .catch(error => console.log(error))
-
   }
 }
 
@@ -87,7 +85,6 @@ export const deleteOil = id => {
       .then(oil => {
         dispatch(destroyOil(oil))
         dispatch(getOils())
-
       })
       .catch(error => console.log(error))
   };

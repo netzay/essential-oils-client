@@ -7,6 +7,5 @@ const Header = () => {
       <img alt="leafdrop" src={leafdrop} style={{ width: '20%', height: '20%' }} />
     </div>
   )
-
 }
 export default Header;

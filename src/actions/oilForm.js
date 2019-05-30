@@ -1,6 +1,4 @@
-
-// Action Creators
-
+// oilForm Action Creators
 export const updateOilFormData = oilFormData => {
   return {
     type: 'UPDATED_DATA',
