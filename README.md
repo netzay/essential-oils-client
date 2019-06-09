@@ -1,4 +1,33 @@
+# Essential Oils
+
+This app provides a quick way to store and view essential oils and their details and benefits.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Usage
+
+- View/delete oils.
+- Add new oils:
+  - name 
+  - uses
+  - description
+  - image
+  
+## Built with
+
+	Ruby version: 2.6.1p33
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/netzay/my-essential-oils. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+## Code of Conduct
+
+Everyone interacting in the RecipeBook project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/netzay/my-essential-oils/blob/master/CODE_OF_CONDUCT.md).
 
 ## Available Scripts
 
@@ -11,11 +40,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
