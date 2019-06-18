@@ -12,7 +12,7 @@ const setOils = oils => {
 
 export const setOil = oil => {
   return {
-    type: 'GET_OIL_SUCESS',
+    type: 'GET_OIL_SUCCESS',
     oil,
   }
 }
@@ -26,7 +26,7 @@ export const addOil = oil => {
 
 export const destroyOil = oil => {
   return {
-    type: 'DELETE_OIL',
+    type: 'DELETE_OIL_SUCCESS',
     oil
   }
 }
@@ -52,7 +52,11 @@ export const getOil = (oil_id) => {
       .catch(error => console.log(error))
   }
 }
-
+//component continues to call an action creator, 
+//which then uses a Promise to postpone dispatching 
+//an action until the API call is complete.The dispatched 
+//action causes a reducer to update its state, which causes 
+//component to re - render. Provides a single place to manage each async call.
 export const createOil = oil => {
   return dispatch => {
     return fetch(`${API_URL}/oils`, {
@@ -62,12 +66,15 @@ export const createOil = oil => {
       },
       body: JSON.stringify({ oil: oil })
     })
+      //wait for promise to resolve by passing 
+      //a handler with the.then method of the promise
       .then(response => response.json())
-      .then(oil => {
-        dispatch(addOil(oil))
+      .then(oil2 => {
+        dispatch(addOil(oil2))
         dispatch(resetOilForm())
-        dispatch(getOils())
       })
+      //intercept any error occuring during the execution
+      //of the request and processing in the .then callbacks
       .catch(error => console.log(error))
   }
 }

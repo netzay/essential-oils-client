@@ -4,7 +4,7 @@ export default (state = [], action) => {
       return action.oils;
     case "CREATE_OIL_SUCCESS":
       return state.concat(action.oil)
-    case "DELETE_OIL":
+    case "DELETE_OIL_SUCCESS":
       return state.filter(oil => oil.id !== action.id)
     default:
       return state;

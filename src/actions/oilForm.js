@@ -5,7 +5,6 @@ export const updateOilFormData = oilFormData => {
     oilFormData
   }
 }
-
 export const resetOilForm = () => {
   return {
     type: 'RESET_OIL_FORM'

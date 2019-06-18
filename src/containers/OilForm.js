@@ -4,7 +4,6 @@ import { updateOilFormData } from '../actions/oilForm'
 import { createOil } from '../actions/oils'
 
 class OilForm extends Component {
-
   handleOnChange = event => {
     const { name, value } = event.target;
     const currentOilFormData = Object.assign({}, this.props.oilFormData, {
@@ -12,12 +11,10 @@ class OilForm extends Component {
     })
     this.props.updateOilFormData(currentOilFormData)
   }
-
   handleOnSubmit = event => {
     event.preventDefault()
     this.props.createOil(this.props.oilFormData)
   }
-
   render() {
     const { name, uses, description, img_url } = this.props.oilFormData;
     return (
@@ -66,7 +63,6 @@ class OilForm extends Component {
     )
   }
 }
-
 const mapStateToProps = state => {
   return {
     oilFormData: state.oilFormData
