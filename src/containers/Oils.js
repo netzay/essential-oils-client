@@ -6,8 +6,6 @@ import { getOils } from '../actions/oils';
 import Oil from '../components/Oil'
 
 class Oils extends Component {
-
-
   componentDidMount() {
     this.props.getOils()
   }
