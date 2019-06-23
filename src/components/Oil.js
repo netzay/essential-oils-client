@@ -4,21 +4,12 @@ import { connect } from 'react-redux';
 import { deleteOil } from '../actions/oils'
 
 class Oil extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      vote: 0
-    };
-  }
+
   handleDelete = event => {
     event.preventDefault()
     this.props.deleteOil(this.props.oil.id)
   }
-  upvote = () => {
-    this.setState({
-      vote: this.state.vote + 1
-    });
-  }
+
   render() {
     return (
       <div>
@@ -32,7 +23,6 @@ class Oil extends React.Component {
             <Card.Link className="App-link" href={this.props.oil.img_url}>Image</Card.Link>
             <br />
             <button onClick={this.handleDelete}>Delete</button>
-            <button onClick={this.upvote}>Up Vote</button>{this.state.vote}
           </Card.Body>
         </Card >
       </div >
