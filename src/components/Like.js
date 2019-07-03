@@ -1,11 +1,14 @@
 import React from 'react';
 import "../css/Like.css";
+import { connect } from 'react-redux';
+import { addFavorite } from '../actions/oils'
 
 
 class Like extends React.Component {
 
   handleLike = event => {
     event.preventDefault()
+    this.props.addFavorite(this.props.oil.id)
     console.log("like")
   }
 
@@ -18,4 +21,6 @@ class Like extends React.Component {
     )
   }
 }
-export default Like;
+export default connect(null, {
+  addFavorite
+})(Like);

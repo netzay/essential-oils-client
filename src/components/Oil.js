@@ -2,11 +2,15 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import { connect } from 'react-redux';
 import { deleteOil } from '../actions/oils'
-import Like from './Like';
+import { addFavorite } from '../actions/favorites'
 
 
 class Oil extends React.Component {
-
+  handleLike = event => {
+    event.preventDefault()
+    this.props.addFavorite(this.props.oil.id)
+    console.log("like")
+  }
   handleDelete = event => {
     event.preventDefault()
     this.props.deleteOil(this.props.oil.id)
@@ -25,7 +29,7 @@ class Oil extends React.Component {
             <Card.Link className="App-link" href={this.props.oil.img_url}>Image</Card.Link>
             <br />
             <button onClick={this.handleDelete}>Delete</button>
-            <Like />
+            {/* <i className="fa fa-heart" onClick={this.handleLike} /> */}
           </Card.Body>
         </Card >
       </div >
@@ -33,5 +37,5 @@ class Oil extends React.Component {
   }
 }
 export default connect(null, {
-  deleteOil
+  deleteOil, addFavorite
 })(Oil);

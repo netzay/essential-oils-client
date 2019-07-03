@@ -24,6 +24,7 @@ export const addOil = oil => {
   }
 }
 
+
 export const destroyOil = oil => {
   return {
     type: 'DELETE_OIL_SUCCESS',
@@ -96,3 +97,4 @@ export const deleteOil = id => {
       .catch(error => console.log(error))
   };
 }
+
