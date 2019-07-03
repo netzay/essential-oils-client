@@ -2,12 +2,10 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import { connect } from 'react-redux';
 import { deleteOil } from '../actions/oils'
+import Like from './Like';
+
 
 class Oil extends React.Component {
-
-  handleLike = event => {
-
-  }
 
   handleDelete = event => {
     event.preventDefault()
@@ -27,8 +25,7 @@ class Oil extends React.Component {
             <Card.Link className="App-link" href={this.props.oil.img_url}>Image</Card.Link>
             <br />
             <button onClick={this.handleDelete}>Delete</button>
-            <div onClick={this.handleLike} className="fa fa-heart like-button" ></div>
-
+            <Like />
           </Card.Body>
         </Card >
       </div >
