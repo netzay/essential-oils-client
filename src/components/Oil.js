@@ -5,6 +5,10 @@ import { deleteOil } from '../actions/oils'
 
 class Oil extends React.Component {
 
+  handleLike = event => {
+
+  }
+
   handleDelete = event => {
     event.preventDefault()
     this.props.deleteOil(this.props.oil.id)
@@ -23,6 +27,8 @@ class Oil extends React.Component {
             <Card.Link className="App-link" href={this.props.oil.img_url}>Image</Card.Link>
             <br />
             <button onClick={this.handleDelete}>Delete</button>
+            <div onClick={this.handleLike} className="fa fa-heart like-button" ></div>
+
           </Card.Body>
         </Card >
       </div >
