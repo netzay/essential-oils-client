@@ -1,29 +1,35 @@
-const API_URL = process.env.REACT_APP_API_URL;
-
-export const addFav = oil => {
-  return {
-    type: 'ADD_FAVORITE_SUCCESS',
-    oil
-  }
+export function createFavorite(name, uses, description) {
+  return dispatch => {
+    return fetch('favorites', {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, uses, description})
+    })
+      .then(response => { return response.json() })
+      .then(payload => {
+        dispatch({ type: 'CREATE_FAVORITE', payload });
+      }).catch(function (error) {
+        console.log('request failed, already in favorites', error)
+      })
+  };
 }
 
-export const addFavorite = id => {
-  return dispatch => {
-    return fetch(`${API_URL}/oils/${id}`, {
-      method: "POST",
-      headers: {
-        'Content-type': 'application/json'
-      },
-      body: JSON.stringify({ oil: id })
+export function fetchFavorites() {
+  return (dispatch) => {
+    dispatch({ type: 'LOADING_FAVORITES' });
+    return fetch('favorites', { accept: 'application/json', })
+      .then(response => { return response.json() })
+      .then(payload => dispatch({ type: 'FETCH_FAVORITES', payload }));
+  };
+}
+
+export function deleteFavorite(favoriteId) {
+  return (dispatch) => {
+    return fetch(`favorites/${favoriteId}`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' }
     })
-      //wait for promise to resolve by passing 
-      //a handler with the.then method of the promise
       .then(response => response.json())
-      .then(oil => {
-        dispatch(addFav(oil))
-      })
-      //intercept any error occuring during the execution
-      //of the request and processing in the .then callbacks
-      .catch(error => console.log(error))
+      .then(payload => dispatch({ type: "DELETE_FAVORITE", payload }))
   }
 }

@@ -1,14 +1,28 @@
-export default (state = [], action) => {
+function favorites(state = {
+  loading: false,
+  favoritesData: []
+
+}, action) {
   switch (action.type) {
-    case "GET_FAVORITES_SUCCESS":
-      return action.oils;
-    case "CREATE_FAVORITE_SUCCESS":
-      return state.concat(action.oil)
-    case "ADD_FAVORITE_SUCCES":
-      return state.concat(action.oil)
-    case "DELETE_FAVORITE_SUCCESS":
-      return state.filter(oil => oil.id !== action.id)
+    case "CREATE_FAVORITE":
+      return {...state, favoritesData: [...state.favoritesData, action.payload]}
+
+    case "LOADING_FAVORITES":
+      return {...state, loading: true, favoritesData:[], }
+
+    case "FETCH_FAVORITES":
+      return {...state, loading:false, favoritesData: action.payload}
+
+    case "DELETE_FAVORITE":
+      return {...state, loading: false,
+      favoritesData: state.favoritesData.filter(
+        favorite => favorite.id !== action.payload.id
+        )
+      }
+
     default:
-      return state;
+      return state
   }
 }
+
+export default favorites;

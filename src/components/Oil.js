@@ -31,6 +31,4 @@ class Oil extends React.Component {
     );
   }
 }
-export default connect(null, {
-  deleteOil
-})(Oil);
+export default Oil;
