@@ -9,7 +9,7 @@ const NavBar = () => {
     <Navbar bg="danger" variant="light" sticky="top">
       <Nav className="mr-auto">
         <Link to="/oils">Oils</Link>||
-        <Link to="/favorites">Favorites</Link>||
+        {/* <Link to="/favorites">Favorites</Link>|| */}
         <Link to="/about">About</Link>||
         <Link to="/addnew">New</Link>
       </Nav>

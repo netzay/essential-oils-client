@@ -1,8 +1,9 @@
 import React from 'react';
-import Like from './Like';
+// import Like from './Like';
 import Card from 'react-bootstrap/Card';
 import { connect } from 'react-redux';
-import { deleteOil } from '../actions/oils'
+import { deleteOil } from '../actions/oils';
+
 
 
 class Oil extends React.Component {
@@ -11,10 +12,11 @@ class Oil extends React.Component {
     this.props.deleteOil(this.props.oil.id)
   }
 
+
   render() {
     return (
       <div>
-        <Card className="OilCard" style={{ width: '13rem', height: '18rem', margin: '10px' }}>
+        <Card className="OilCard" style={{ width: '13rem', height: '18rem', margin: '10px' }} >
           <Card.Header as="h5">{this.props.oil.name}</Card.Header>
           <Card.Body>
             <Card.Text as="h6">Uses: <br />
@@ -23,8 +25,8 @@ class Oil extends React.Component {
             </Card.Text>
             <Card.Link className="App-link" href={this.props.oil.img_url}>Image</Card.Link>
             <br />
-            <button onClick={this.handleDelete}>Delete</button>
-            <Like />
+            <button onClick={this.handleDelete}>Delete</button><br />
+            {/* <Like /> */}
           </Card.Body>
         </Card >
       </div >

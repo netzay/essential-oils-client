@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
 import '../css/App.css';
@@ -15,25 +15,25 @@ import { fetchFavorites } from '../actions/favorites'
 
 
 class App extends Component {
-  componentDidMount = () => {
-    this.props.fetchFavorites();
-  }
+  // componentDidMount = () => {
+  //   this.props.fetchFavorites();
+  // }
 
   render() {
-  return (
-    <Router>
-      <div className="App">
-        <NavBar />
-        <div className="App-header">
-          <br />
-          <Header />
-          <Route exact path="/oils" component={Oils} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/addnew" component={OilForm} />
+    return (
+      <Router>
+        <div className="App">
+          <NavBar />
+          <div className="App-header">
+            <br />
+            <Header />
+            <Route exact path="/oils" component={Oils} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/addnew" component={OilForm} />
+          </div>
         </div>
-      </div>
-    </Router>
-  );
-}
+      </Router>
+    );
+  }
 }
 export default connect(null, { fetchFavorites })(App);
