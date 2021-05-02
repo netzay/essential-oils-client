@@ -11,13 +11,10 @@ import NavBar from './NavBar';
 import Header from './Header';
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { fetchFavorites } from '../actions/favorites'
 
 
 class App extends Component {
-  // componentDidMount = () => {
-  //   this.props.fetchFavorites();
-  // }
+
 
   render() {
     return (
@@ -36,4 +33,4 @@ class App extends Component {
     );
   }
 }
-export default connect(null, { fetchFavorites })(App);
+export default connect(null, )(App);

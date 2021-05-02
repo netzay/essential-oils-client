@@ -16,8 +16,8 @@ class Oil extends React.Component {
   render() {
     return (
       <div>
-        <Card className="OilCard" style={{ width: '13rem', height: '18rem', margin: '10px' }} >
-          <Card.Header as="h5">{this.props.oil.name}</Card.Header>
+        <Card className="OilCard" style={{ width: '13rem', height: '23rem', margin: '10px' }} >
+          <Card.Header as="h5">{this.props.oil.name.toUpperCase()}</Card.Header>
           <Card.Body>
             <Card.Text as="h6">Uses: <br />
               {this.props.oil.uses}</Card.Text>
