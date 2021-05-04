@@ -1,5 +1,6 @@
 .OilCard {
   float: left;
+  font: italic 1.2em "Fira Sans", serif;
   margin: 1.5%;
   background: rgb(80, 77, 77);
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
