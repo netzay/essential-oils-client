@@ -1,5 +1,4 @@
 import React from 'react';
-// import Like from './Like';
 import Card from 'react-bootstrap/Card';
 import { connect } from 'react-redux';
 import { deleteOil } from '../actions/oils';
@@ -26,7 +25,6 @@ class Oil extends React.Component {
             <Card.Link className="App-link" href={this.props.oil.img_url}>Image</Card.Link>
             <br />
             <button onClick={this.handleDelete}>Delete</button><br />
-            {/* <Like /> */}
           </Card.Body>
         </Card >
       </div >

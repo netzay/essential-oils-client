@@ -12,12 +12,11 @@
 
 .Navbar {
   font-size: calc(10px + 2vmin);
-
   background-color: #282c34;
   color: white;
 }
 a:link {
-  color: green;
+  color: #008000;
   background-color: transparent;
   text-decoration: none;
 }

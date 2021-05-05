@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateOilFormData } from '../actions/oilForm'
-import { createOil } from '../actions/oils'
+import { createOil } from '../actions/oils';
+import '../css/Oils.css';
+
 
 class OilForm extends Component {
   handleOnChange = event => {
@@ -16,13 +18,14 @@ class OilForm extends Component {
     this.props.createOil(this.props.oilFormData)
   }
   render() {
-    const { name, uses, description, img_url } = this.props.oilFormData;
+    const { name, uses, notes} = this.props.oilFormData;
     return (
-      <div id="OilForm" className="OilForm">
-        Add New:
+      <div className="OilForm">
+
+        
         <form onSubmit={this.handleOnSubmit}>
           <div>
-            <label htmlFor="name">Name:</label>
+            <label htmlFor="name">Name: </label>
             <input
               type="text"
               onChange={this.handleOnChange}
@@ -31,7 +34,7 @@ class OilForm extends Component {
             />
           </div>
           <div>
-            <label htmlFor="uses">Uses:</label>
+            <label htmlFor="uses">Uses:  </label>
             <input
               type="text"
               onChange={this.handleOnChange}
@@ -40,24 +43,24 @@ class OilForm extends Component {
             />
           </div>
           <div>
-            <label htmlFor="description">Description:</label>
+            <label htmlFor="notes">Notes: </label>
             <input
               type="text"
               onChange={this.handleOnChange}
-              name="description"
-              value={description}
+              name="notes"
+              value={notes}
             />
           </div>
-          <div>
-            <label htmlFor="img_url">Image Url:</label>
+          {/* <div>
+            <label htmlFor="img_url">Image Url: </label>
             <input
               type="text"
               onChange={this.handleOnChange}
               name="img_url"
               value={img_url}
             />
-          </div>
-          <button type="submit">Add Oil</button>
+          </div> */}
+          <button className="Button" type="submit">Add New</button>
         </form>
       </div>
     )
