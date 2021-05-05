@@ -10,8 +10,29 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Navbar {
+  font-size: calc(10px + 2vmin);
+
+  background-color: #282c34;
+  color: white;
 }
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(245, 237, 238);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(21, 255, 0);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
 
 
