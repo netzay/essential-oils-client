@@ -21,8 +21,6 @@ class OilForm extends Component {
     const { name, uses, notes} = this.props.oilFormData;
     return (
       <div className="OilForm">
-
-        
         <form onSubmit={this.handleOnSubmit}>
           <div>
             <label htmlFor="name">Name: </label>
