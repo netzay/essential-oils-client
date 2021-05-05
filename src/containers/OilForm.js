@@ -49,15 +49,6 @@ class OilForm extends Component {
               value={notes}
             />
           </div>
-          {/* <div>
-            <label htmlFor="img_url">Image Url: </label>
-            <input
-              type="text"
-              onChange={this.handleOnChange}
-              name="img_url"
-              value={img_url}
-            />
-          </div> */}
           <button className="Button" type="submit">Add New</button>
         </form>
       </div>

@@ -16,13 +16,13 @@ class Oil extends React.Component {
     return (
       <div>
         <Card className="OilCard" style={{ width: '13rem', height: '23rem', margin: '10px' }} >
-          <Card.Header as="h5">{this.props.oil.name.toUpperCase()}</Card.Header>
+          <Card.Header as="h5" >{this.props.oil.name.toUpperCase()}</Card.Header>
           <Card.Body>
             <Card.Text as="h6">Uses: <br />
               {this.props.oil.uses}</Card.Text>
-            <Card.Text as="h6">Description: <br />{this.props.oil.description}
-            </Card.Text>
-            <Card.Link className="App-link" href={this.props.oil.img_url}>Image</Card.Link>
+            
+            <Card.Text as="h6" >Notes: <br />
+              {this.props.oil.notes}</Card.Text>
             <br />
             <button onClick={this.handleDelete}>Delete</button><br />
           </Card.Body>

@@ -1,8 +1,7 @@
 const initialState = {
   name: '',
   uses: '',
-  description: '',
-  img_url: ''
+  notes: ''
 }
 export default (state = initialState, action) => {
   switch (action.type) {
