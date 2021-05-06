@@ -23,7 +23,7 @@ class Oil extends React.Component {
             
             <Card.Text as="h6" >Notes: <br />
               {this.props.oil.notes}</Card.Text>
-            <br />
+
             <button onClick={this.handleDelete}>Delete</button><br />
           </Card.Body>
         </Card >
