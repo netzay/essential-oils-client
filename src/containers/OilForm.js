@@ -29,6 +29,8 @@ class OilForm extends Component {
               onChange={this.handleOnChange}
               name="name"
               value={name}
+              pattern="[a-zA-Z]"
+              required
             />
           </div>
           <div>
@@ -38,15 +40,20 @@ class OilForm extends Component {
               onChange={this.handleOnChange}
               name="uses"
               value={uses}
+              pattern="[a-zA-Z]"
+              required
+
             />
           </div>
           <div>
             <label htmlFor="notes">Notes: </label>
             <input
-              type="text"
+              type="text" 
               onChange={this.handleOnChange}
               name="notes"
               value={notes}
+              pattern="[a-zA-Z]"
+              required
             />
           </div>
           <button className="Button" type="submit">Add New</button>
