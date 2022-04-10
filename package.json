@@ -19,7 +19,7 @@
     "lodash.template": ">=4.5.0",
     "mdb-react-ui-kit": "^1.0.0-beta4",
     "merge": ">=2.1.1",
-    "minimist": ">=1.2.3",
+    "minimist": ">=1.2.6",
     "mixin-deep": "^2.0.1",
     "node-forge": ">=0.10.0",
     "node-notifier": ">=8.0.1",
